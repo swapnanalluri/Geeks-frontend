@@ -1,0 +1,21 @@
+h3>button{
+float: right;
+right: 10mm;
+}
+table, th, td {
+    border: 1px solid black;
+    padding: 5px;
+  }
+  table {
+    border-spacing: 15px;
+  }
+ /*  body{
+    background-image: url("../assets/bank.png");
+    height: 657px; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    */
+
+    
+    

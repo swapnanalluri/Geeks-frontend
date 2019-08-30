@@ -1,0 +1,24 @@
+
+
+  <br>  <br> 
+  <h3>List of your accounts</h3>
+  <table  class="table table-bordered shadow p-3 mb-5 bg-white rounded"  >
+      <thead class="thead-dark">
+          <tr>
+            <th scope="col">Account number</th>
+            <th scope="col">Balance</th>
+            <th scope="col">Branch</th>
+            <th scope="col">IFSC</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let account of accounts">
+                <td> {{account.acnumber}}</td>
+                 <td>{{account.balance}} </td>
+                  <td> {{account.branch}}</td> 
+                  <td>{{account.ifsc}} </td>
+               </tr>
+            
+        </tbody>
+     </table>
+

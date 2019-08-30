@@ -1,0 +1,35 @@
+<mat-toolbar>
+    <span>{{dataService.accountForm.controls['aid'].value?"Modify Account":"New Account"}}</span>
+    <span class="fill-remaining-space"></span>
+    <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1"><mat-icon>clear</mat-icon></button>
+  </mat-toolbar>
+  <form [formGroup]="dataService.accountForm" class="normal-form" (submit)="onSubmit()">
+        <div class="controles-container">
+        <input type="hidden" formControlName="aid">
+          <mat-form-field>
+            <input formControlName="acnumber" matInput placeholder="Account Number">
+          </mat-form-field>
+          <mat-form-field>
+            <input formControlName="balance" matInput placeholder="Balance">
+            <mat-error *ngIf="dataService.accountForm.controls['balance'].errors?.min">Minimum 5000 amount needed.</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+              <input formControlName="branch" matInput placeholder="Branch">
+            </mat-form-field>
+            <mat-form-field>
+                <input formControlName="ifsc" matInput placeholder="IFSC">
+              </mat-form-field>
+          <!-- <mat-form-field>
+            <input formControlName="phoneNo" matInput placeholder="Mobile*">
+            <mat-error *ngIf="dataService.form.controls['phoneNo'].errors?.required">This field is mandatory.</mat-error>
+            <mat-error *ngIf="dataService.form.controls['phoneNo'].errors?.minlength">Minimum 8 charactors needed.</mat-error>
+          </mat-form-field> -->
+          <div class="button-row">
+              <button mat-raised-button color="primary" type="submit" [disabled]="dataService.accountForm.invalid">Submit</button>
+                      </div>
+    
+
+        </div>
+      </form>
+
+      

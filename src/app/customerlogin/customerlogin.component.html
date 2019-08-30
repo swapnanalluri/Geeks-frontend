@@ -1,0 +1,51 @@
+<div class="container">
+  <br>
+<form ngForm #form = "ngForm" 
+(ngSubmit)="handleFormData(form)">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="name"><h5>User Name</h5></label>
+        <input 
+            type="text" 
+            ngModel 
+            required
+            minlength="5"
+            maxlength="8"
+            #customerName="ngModel"
+            name="name"
+            class="form-control" 
+            id="name" 
+            aria-describedby="name" 
+            placeholder="Enter user name">
+      </div>
+      <div class="alert alert-danger" *ngIf="customerName.touched && customerName.invalid">
+          <span *ngIf="customerName.errors.required">Usename field is required</span>
+          <span *ngIf="customerName.errors.minlength">
+            Username field is required -
+             {{customerName.errors.minlength.requiredLength - customerName.errors.minlength.actualLength}}</span>
+      </div>
+      <div class="form-group">
+        <label for="pass"><h5>Password</h5></label>
+        <input 
+            type="password" 
+            class="form-control" 
+            name="pass"
+            required 
+            ngModel 
+            #pass = "ngModel"
+            id="pass" placeholder="Enter your Password">
+      </div>
+      <div class="alert alert-danger" *ngIf="pass.touched && pass.invalid">
+          <span>Password is mandatory</span>
+      </div>
+      <a  [routerLink]="['customerdashboard']" 
+      routerLinkActive="router-link-active"  ><button 
+            type="submit" 
+            [disabled]="form.invalid"
+            class="btn btn-primary">Submit</button></a>
+        </div>
+    </div>
+</form>
+</div>
+<router-outlet></router-outlet>

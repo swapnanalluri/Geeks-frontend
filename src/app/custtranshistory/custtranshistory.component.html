@@ -1,0 +1,31 @@
+
+    <h3>Generate Transactions</h3>
+    <br><br>
+    <div class="container">
+        <br>
+        <form>
+                <div class="row">
+                  <div class="col-md-6">
+                <div class="form-group">
+                  <label>Select Account</label>
+                      <select  class="form-control"  id="from_anum" name="account" [(ngModel)]="acnum"  (change)="getAccNum(acnum)">
+                              <option *ngFor="let account of accounts" value="{{account.acnumber}}"  >
+                                    {{account.acnumber}}
+                              </option>
+                          </select>
+                          
+                    </div>
+    
+              </div></div>
+            
+              <a  [routerLink]="['last10trans']" 
+                  routerLinkActive="router-link-active">
+                        <button type="button" class="btn btn-info btn-lg">Display Last 10 Transactions</button>
+             </a>
+              
+   
+            <br><br><br>
+    
+      </form>
+            </div>
+            <router-outlet></router-outlet>

@@ -1,0 +1,66 @@
+<br>
+<h3 style="text-align: center"> List of Accounts </h3>
+<br>
+<button class="glyphicon glyphicon-log-out" class="btn btn-info btn-lg"  (click)='logout()'>
+    Logout
+  </button>
+  <div class="home">
+      <a  class="nav-link" [routerLink]="['/banker']" routerLinkActive="active"  >
+        HOME
+        </a>
+
+  </div>
+    
+
+<div class="search-div">
+    <button mat-raised-button color="primary" (click)="onCreate()" style="background-color: #f10606 ;height: 50px;border-radius: 15px;font-size: 18px  ">
+      <mat-icon>add</mat-icon>
+      Add Account
+    </button> &nbsp;
+    <mat-form-field class="search-form-field" floatLabel="never">
+      <input matInput [(ngModel)]="searchKey" placeholder="Search Account" autocomplete="off" (keyup)="applyFilter()">
+      <button mat-button matSuffix mat-icon-button aria-label="Clear"*ngIf="searchKey"  (click)="onSearchClear()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+  <br>
+  <div class="mat-elevation-z8">
+    <mat-table [dataSource]="listData"  matSort>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      <ng-container matColumnDef="aid">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Aid</mat-header-cell>
+        <mat-cell *matCellDef="let element">
+           {{element.aid}} 
+          </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="acnumber">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Account Number</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.acnumber}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="branch">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Branch</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.branch}}</mat-cell>
+        </ng-container>
+      <ng-container matColumnDef="ifsc">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>IFSC</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.ifsc}}</mat-cell>
+        </ng-container>
+      <ng-container matColumnDef="balance">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Balance</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.balance}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <mat-header-cell *matHeaderCellDef> Delete</mat-header-cell>
+            <mat-cell *matCellDef="let row">
+              <button mat-icon-button color="warn" (click)="onDelete(row.aid)"><mat-icon>delete_outline</mat-icon></button>
+            </mat-cell>
+          </ng-container>
+          
+        
+          </mat-table>
+    <mat-paginator [pageSize]="5" ></mat-paginator>
+  </div>
+    

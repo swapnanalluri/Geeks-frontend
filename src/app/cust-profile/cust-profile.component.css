@@ -1,0 +1,9 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+div{
+   font-size: 23px;
+}
+div>h2{
+    background-color: rgba(0, 0, 0, 0.623);
+    color: white;
+}

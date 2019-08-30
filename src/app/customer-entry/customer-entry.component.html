@@ -1,0 +1,70 @@
+<mat-toolbar>
+    <span>{{dataService.form.controls['cid'].value?"Modify Customer":"New Customer"}}</span>
+    <span class="fill-remaining-space"></span>
+    <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1"><mat-icon>clear</mat-icon></button>
+  </mat-toolbar>
+  <form [formGroup]="dataService.form" class="normal-form" (submit)="onSubmit()">
+        <div class="controles-container">
+        <input type="hidden" formControlName="cid">
+          <mat-form-field>
+            <input formControlName="name" matInput placeholder="Full Name*">
+            <mat-error *ngIf="dataService.form.controls['name'].errors?.required">This field is mandatory.</mat-error>
+         
+          </mat-form-field>
+          <mat-form-field>
+            <input formControlName="userName" matInput placeholder="User Name">
+            <mat-error *ngIf="dataService.form.controls['userName'].errors?.required">This field is mandatory.</mat-error>
+         
+          </mat-form-field>
+          <mat-form-field>
+              <input formControlName="password" matInput placeholder="password">
+              <mat-error *ngIf="dataService.form.controls['password'].errors?.required">This field is mandatory.</mat-error>
+              <mat-error *ngIf="dataService.form.controls['password'].errors?.minlength">Minimum 6 characters needed.</mat-error>
+           
+            </mat-form-field>
+            <mat-form-field>
+                <input formControlName="pan" matInput placeholder="pan">
+                <mat-error *ngIf="dataService.form.controls['pan'].errors?.required">This field is mandatory.</mat-error>
+                <mat-error *ngIf="dataService.form.controls['pan'].errors?.minlength">Length must be 10 characters.</mat-error>
+             
+              </mat-form-field>
+              <!-- <mat-form-field>
+                  <input formControlName="address[street]" matInput placeholder="Street Name*">
+                </mat-form-field> -->
+          <mat-form-field>
+            <input formControlName="phoneNo" matInput placeholder="Mobile*">
+            <mat-error *ngIf="dataService.form.controls['phoneNo'].errors?.required">This field is mandatory.</mat-error>
+            <mat-error *ngIf="dataService.form.controls['phoneNo'].errors?.minlength">Minimum 10 charactors needed.</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input formControlName="address" matInput placeholder="Address">
+          </mat-form-field>
+          <mat-form-field>
+            <input formControlName="city" matInput placeholder="City">
+          </mat-form-field>
+          <mat-form-field>
+            <input formControlName="state" matInput placeholder="State">
+          </mat-form-field>
+          <mat-form-field>
+            <input formControlName="zip" matInput placeholder="Zip">
+          </mat-form-field>
+        
+          <!-- <mat-form-field>
+              <input formControlName="address.street" matInput placeholder="Street">
+            </mat-form-field>
+            <mat-form-field>
+              <input formControlName="address.city" matInput placeholder="City">
+            </mat-form-field>
+            <mat-form-field>
+                <input formControlName="address.state" matInput placeholder="State">
+              </mat-form-field>
+              <mat-form-field>
+                  <input formControlName="address.zip" matInput placeholder="Zip">
+                </mat-form-field> -->
+          <div class="button-row">
+              <button mat-raised-button color="primary" type="submit" [disabled]="dataService.form.invalid">Submit</button>
+                      </div>
+    
+
+        </div>
+      </form>

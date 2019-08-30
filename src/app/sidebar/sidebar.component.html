@@ -1,0 +1,36 @@
+<div class="app">
+    <div id="sidenav">
+      <div class="wrapper">
+        <div class="logo">
+          <h4>Dash board</h4>
+        </div>
+        <div class="menu">
+          <ul>
+              <li routerLinkActive="active">
+                  <a [routerLink]="['cust-profile']">Profile</a>
+                </li>
+            <li routerLinkActive="active">
+              <a [routerLink]="['custlistofaccs']">List of Accounts</a>
+            </li>
+  
+            <li routerLinkActive="active">
+              <a [routerLink]="['custfundtransfer']">Fund Transfer</a>
+            </li>
+  
+            <li routerLinkActive="active">
+              <a [routerLink]="['custtranshistory']">Generate Statement</a>
+            </li>
+            <li class="fixed-bottom" >
+                <button class="glyphicon glyphicon-log-out" class="btn btn-info btn-lg" (click)='logout()'>Logout</button>
+
+            </li>
+  
+  
+          </ul>
+          
+
+        </div>
+  
+      </div>
+    </div>
+  </div>

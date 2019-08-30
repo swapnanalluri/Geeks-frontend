@@ -1,0 +1,72 @@
+<br>
+<h3 style="text-align: center">List of Customers</h3>
+<br>
+<button class="glyphicon glyphicon-log-out" class="btn btn-info btn-lg" style="float:right;margin-right: 40px" (click)='logout()'>
+    Logout
+  </button>
+
+
+<div class="search-div">
+  <button mat-raised-button color="primary" (click)="onCreate()" style="background-color: #f10606 ;height: 50px;border-radius: 15px;font-size: 18px ">
+    <mat-icon>add</mat-icon>
+    Add Customer
+  </button>  &nbsp;
+
+  <mat-form-field class="search-form-field" floatLabel="never">
+    <input matInput [(ngModel)]="searchKey" placeholder="Search Customer...." autocomplete="off" (keyup)="applyFilter()">
+    <button mat-button matSuffix mat-icon-button aria-label="Clear"*ngIf="searchKey"  (click)="onSearchClear()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+<br>
+<div class="mat-elevation-z8">
+  <mat-table [dataSource]="listData"  matSort>
+    <mat-header-row  *matHeaderRowDef="displayedColumns" ></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"  ></mat-row>
+    <ng-container matColumnDef="cid">
+      <mat-header-cell *matHeaderCellDef  mat-sort-header><h6>Cid</h6></mat-header-cell>
+      <mat-cell *matCellDef="let element">
+          <a [routerLink]="['/customers/',element.cid]" 
+          routerLinkActive="router-link-active"> {{element.cid}} </a> 
+        </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef  mat-sort-header><b>Name</b></mat-header-cell>
+      <mat-cell *matCellDef="let element">
+          <a [routerLink]="['/customers/',element.cid]" 
+          routerLinkActive="router-link-active"> {{element.name}} </a> 
+        </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="userName">
+      <mat-header-cell *matHeaderCellDef  mat-sort-header>User Name</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.userName}}</mat-cell>
+    </ng-container>
+
+    
+    <ng-container matColumnDef="pan">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>PAN</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.pan}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="phoneNo">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Phone No.</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.phoneNo}}</mat-cell>
+      </ng-container>
+
+    <ng-container matColumnDef="address">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Address</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.address}} {{element.city}} {{element.state}} {{element.zip}}</mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef>Update &nbsp;&nbsp; Delete</mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        
+        <button mat-icon-button (click)="onEdit(row)"> <mat-icon>launch</mat-icon></button>
+        <button mat-icon-button color="warn" (click)="onDelete(row.cid)"><mat-icon>delete_outline</mat-icon></button>
+      </mat-cell>
+    </ng-container>
+      </mat-table>
+  <mat-paginator [pageSize]="10" ></mat-paginator>
+</div>

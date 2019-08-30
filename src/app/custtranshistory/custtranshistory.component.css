@@ -1,0 +1,14 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+form {
+    
+    padding-block:30px;
+    }
+    .btn-info {
+        color: white;
+        background-color: #f10606;
+        border-color: #f10606;
+    }
+    table
+    {
+        width:100%
+    }

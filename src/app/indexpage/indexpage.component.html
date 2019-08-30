@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Geek Online Banking</title>
+ 
+  <meta property="og:title" content="">
+  <meta property="og:image" content="">
+  
+    
+   <!-- <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+   <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet"> -->
+
+ </head>
+
+<body>
+  <!-- Page Content
+    ================================================== -->
+  <!-- Hero -->
+
+  <section class="hero">
+    <div class="container text-center">
+      <div class="row">
+      
+      </div>
+
+      <div class="col-md-12">
+        <h1>
+          Geeks Online Banking System
+          </h1>
+
+        <p class="tagline">
+          This is a powerful bank with great features which makes banking joyful.
+        </p>
+        <a class="btn btn-full" href="#about">Get Started Now</a>
+      </div>
+    </div>
+
+  </section>
+  <!-- /Hero -->
+
+  <!-- Header -->
+  <header id="header">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        
+        <h1><a href="#hero">Geek</a></h1> 
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#features">Features</a></li>
+          <li class="menu-has-children"><a [routerLink]="['/homepage']" 
+            routerLinkActive="router-link-active">Login</a>
+            
+          </li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+      <!-- #nav-menu-container -->
+
+      <nav class="nav social-nav pull-right d-none d-lg-inline">
+        <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a> <a href="#"><i class="fa fa-envelope"></i></a>
+      </nav>
+    </div>
+  </header>
+  <!-- #header -->
+
+  <!-- About -->
+
+  <section class="about" id="about">
+    <div class="container text-center">
+      <h2>
+          About Geeks Banking System
+        </h2>
+
+      <p>
+          Online banking, also known as internet banking, is an electronic payment system that enables 
+          customers of a bank or other financial institution to conduct a range of financial transactions 
+          through the financial institution's website. The online banking system will typically connect to or
+           be part of the core banking system operated by a bank and is in contrast
+           to branch banking which was the traditional way customers accessed banking services.
+      </p>
+
+      <div class="row stats-row">
+        <div class="stats-col text-center col-md-4 col-sm-6">
+          <div class="circle">
+            <span class="stats-no" data-toggle="counter-up">>100</span> Total Customers
+          </div>
+        </div>
+
+        <div class="stats-col text-center col-md-3 col-sm-6">
+          <div class="circle">
+            <span class="stats-no" data-toggle="counter-up">>20</span> Total Employees
+          </div>
+        </div>
+
+        <div class="stats-col text-center col-md-3 col-sm-6">
+          <div class="circle">
+            <span class="stats-no" data-toggle="counter-up">24/7</span> Hours Of Support
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+  </section>
+  <!-- /About -->
+  <!-- Parallax -->
+ 
+  <!-- /Parallax -->
+  <!-- Features -->
+
+  <section class="features" id="features">
+    <div class="container">
+      <h2 class="text-center">
+          Features
+        </h2>
+
+      <div class="row">
+        <div class="feature-col col-lg-4 col-xs-12">
+          <div class="card card-block text-center">
+            <div>
+              <div class="feature-icon">
+                <span class="fa fa-rocket"></span>
+              </div>
+            </div>
+
+            <div>
+              <h3>
+                  Custom Logins
+                </h3>
+
+              <p>
+               Saperate logins for Customers and Bankers.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-col col-lg-4 col-xs-12">
+          <div class="card card-block text-center">
+            <div>
+              <div class="feature-icon">
+                <span class="fa fa-envelope"></span>
+              </div>
+            </div>
+
+            <div>
+              <h3>
+                 Account Manipulations by Banker
+                </h3>
+
+              <p>
+               Feature to add, delete,update a customer by banker.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-col col-lg-4 col-xs-12">
+          <div class="card card-block text-center">
+            <div>
+              <div class="feature-icon">
+                <span class="fa fa-bell"></span>
+              </div>
+            </div>
+
+            <div>
+              <h3>
+                  Fund Transfers
+                </h3>
+
+              <p>
+                Feature to transfer funds to own accounts and other bank accounts.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="feature-col col-lg-4 col-xs-12">
+          <div class="card card-block text-center">
+            <div>
+              <div class="feature-icon">
+                <span class="fa fa-database"></span>
+              </div>
+            </div>
+
+            <div>
+              <h3>
+                  Generating Statements
+                </h3>
+
+              <p>
+               Feature to generate last 10 transaction of existing accounts of a customer  
+              </p>
+            </div>
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+  </section>
+    <!-- /Team -->
+  <!-- @component: footer -->
+
+  <section id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h2 class="section-title">Contact Us</h2>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-3 col-md-4">
+          <div class="info">
+            <div>
+              <i class="fa fa-map-marker"></i>
+              <p>Waverock<br>Hyderabad, 5000</p>
+            </div>
+
+            <div>
+              <i class="fa fa-envelope"></i>
+              <p>geeks@dbs.com</p>
+            </div>
+
+            <div>
+              <i class="fa fa-phone"></i>
+              <p>+1 5589 55488 55s</p>
+            </div>
+
+          </div>
+        </div>
+ 
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="bottom">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-6 col-xs-12 text-lg-left text-center">
+            <p class="copyright-text">
+              © Geek Theme
+            </p>
+            <div class="credits">
+             
+             Designed by <a>Geek Team</a>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-xs-12 text-lg-right text-center">
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="index.html">Home</a>
+              </li>
+
+              <li class="list-inline-item">
+                <a href="#about">About Us</a>
+              </li>
+
+              <li class="list-inline-item">
+                <a href="#features">Features</a>
+              </li>
+
+              <li class="list-inline-item">
+                <a href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </footer> 
+</body>
+</html>

@@ -1,0 +1,27 @@
+<table class="table  table-bordered shadow p-3 mb-5 bg-white rounded">
+  <thead class="thead-dark">
+    <tr class="table-info">
+      <th scope="col"> Remarks </th>
+      <th scope="col"> Amount </th> 
+      <th scope="col"> Debit/Credit </th>
+      <th scope="col"> Date </th>
+      </tr></thead>
+    <tbody class="table-stripped">
+          <tr *ngFor="let transaction of last10trans" class="table-Info">
+            <td>
+                <div *ngIf="acnum==transaction.fromAccountNo; else elsBlock">{{'Transfered  to'}} {{transaction.toAccountNo}} </div>
+                <ng-template #elsBlock>{{'Recieved from'}} {{transaction.fromAccountNo}}</ng-template>
+            </td>
+            <td>{{transaction.amount}} </td>
+      <td [style.color]="acnum==transaction.fromAccountNo?'red':'green' " >
+      <div *ngIf="acnum==transaction.fromAccountNo; else elseBlock"> {{'Debit'}}</div>
+          <ng-template #elseBlock>{{'Credit'}}</ng-template>
+    </td>
+    <td>
+        {{transaction.date}}
+    </td>
+        
+      </tr>
+    </tbody>
+    
+  </table>
